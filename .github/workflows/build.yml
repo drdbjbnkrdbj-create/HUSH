@@ -28,8 +28,11 @@ jobs:
 
     - name: Setup Capacitor and Android
       run: |
-        npx @capacitor/cli add android || true
-        npx @capacitor/cli sync android || true
+        if [ ! -d "android" ]; then
+          npx @capacitor/cli init "HUSH" "com.hush.game" --web-dir dist --yes
+          npx @capacitor/cli add android
+        fi
+        npx @capacitor/cli sync android
 
     - name: Build Android APK
       run: |
