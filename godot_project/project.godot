@@ -1,0 +1,39 @@
+; Engine configuration file for HUSH! - Offline 3D Co-op Horror Game Foundation
+; Compatible with Godot 4.2+ and 4.3+ for Android
+
+config_version=5
+
+[application]
+
+config/name="HUSH! - 3D Stealth Horror"
+config/description="3D stealth horror game set in a supermarket at night with real-time microphone noise detection and guard AI."
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+boot_splash/bg_color=Color(0.0196, 0.0275, 0.0588, 1)
+
+[autoload]
+
+NoiseManager="*res://scripts/noise_manager.gd"
+GameManager="*res://scripts/game_manager.gd"
+MicInput="*res://scripts/mic_input.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=6
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.0196, 0.0275, 0.0588, 1)
+anti_aliasing/quality/msaa_3d=1
+
+[audio]
+
+buses/default_bus_layout="res://default_bus_layout.tres"
+driver/enable_input=true

@@ -1,0 +1,6 @@
+{
+  "name": "HUSH! — 3D Stealth Horror Game",
+  "description": "3D stealth-horror supermarket game with real microphone noise detection, guard AI, Arabic RTL UI, and Godot 4 Android project source exporter.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
