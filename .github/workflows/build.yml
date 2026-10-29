@@ -22,7 +22,7 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: bun install
 
       - name: Build web app
         run: bun run build
@@ -34,7 +34,7 @@ jobs:
           java-version: '17'
           cache: gradle
 
-      - name: Setup Capacitor Android
+      - name: Sync Capacitor with Android
         run: |
           if [ ! -d "android" ]; then
             npx cap add android
@@ -45,7 +45,7 @@ jobs:
         working-directory: android
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew --no-daemon assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
